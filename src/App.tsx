@@ -177,13 +177,13 @@ export default function App() {
 
   const handleSelectPlan = (plan: PricingPlan) => {
     // In promotional draft mode, route to WhatsApp or contact for custom quote
-    const phone = import.meta.env.VITE_WHATSAPP_NUMBER || "5215500000000";
+    const phone = import.meta.env.VITE_WHATSAPP_NUMBER || "524777871635";
     const text = encodeURIComponent(`¡Hola EternIA! Me interesa el plan ${plan.name} ($${plan.price} ${plan.currency}) para crear una canción y homenaje personalizado. ¿Cómo podemos iniciar?`);
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
   };
 
   const handleRequestSimilar = (story: FinishedStory) => {
-    const phone = import.meta.env.VITE_WHATSAPP_NUMBER || "5215500000000";
+    const phone = import.meta.env.VITE_WHATSAPP_NUMBER || "524777871635";
     const text = encodeURIComponent(`¡Hola EternIA! Me encantó la obra "${story.title}" (${story.categoryLabel}). Quisiera cotizar una obra similar para mi historia.`);
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
   };

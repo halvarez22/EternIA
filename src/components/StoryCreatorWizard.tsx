@@ -97,7 +97,7 @@ export const StoryCreatorWizard: React.FC<StoryCreatorWizardProps> = ({
   };
 
   const openWhatsAppOrder = () => {
-    const phone = import.meta.env.VITE_WHATSAPP_NUMBER || "5215500000000";
+    const phone = import.meta.env.VITE_WHATSAPP_NUMBER || "524777871635";
     const text = encodeURIComponent(
       `¡Hola EternIA! Deseo encargar una producción cinematográfica:\n\n*Categoría:* ${formData.category}\n*Para:* ${formData.recipientName}\n*De parte de:* ${formData.senderName || 'Familia'}\n*Estilo:* ${formData.musicStyle}\n*Título propuesto:* ${generatedResult?.title || 'Mi Historia Eterna'}\n\n¿Podemos coordinar la entrega y el envío de fotos?`
     );
