@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+:root {
+  --bg-app: #040814;
+  --text-primary: #F8FAFC;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --glass-bg: rgba(7, 15, 34, 0.65);
+  --glass-border: rgba(56, 189, 248, 0.15);
+  --glass-hover-bg: rgba(14, 165, 233, 0.1);
+  --card-inner-bg: #070F22;
+  --card-inner-border: rgba(255, 255, 255, 0.08);
+  --btn-primary-bg: #FFFFFF;
+  --btn-primary-text: #020617;
+  --header-bg: rgba(4, 8, 20, 0.88);
+  --modal-bg: #060D1E;
+  --input-bg: rgba(255, 255, 255, 0.04);
+  --input-border: rgba(56, 189, 248, 0.2);
+  --scrollbar-track: #040814;
+  --scrollbar-thumb: #1E293B;
+  --brand-gold: #F59E0B;
+  --brand-cyan: #00F0FF;
+  --brand-magenta: #EC4899;
+}
+
+.light {
+  --bg-app: #F8FAFC;
+  --text-primary: #0F172A;
+  --text-secondary: rgba(15, 23, 42, 0.7);
+  --text-muted: rgba(15, 23, 42, 0.48);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(14, 165, 233, 0.18);
+  --glass-hover-bg: rgba(255, 255, 255, 0.98);
+  --card-inner-bg: #FFFFFF;
+  --card-inner-border: rgba(0, 0, 0, 0.06);
+  --btn-primary-bg: #0F172A;
+  --btn-primary-text: #FFFFFF;
+  --header-bg: rgba(248, 250, 252, 0.92);
+  --modal-bg: #FFFFFF;
+  --input-bg: rgba(15, 23, 42, 0.03);
+  --input-border: rgba(14, 165, 233, 0.25);
+  --scrollbar-track: #F1F5F9;
+  --scrollbar-thumb: #CBD5E1;
+  --brand-gold: #D97706;
+  --brand-cyan: #0284C7;
+  --brand-magenta: #DB2777;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .serif {
+    font-family: 'Playfair Display', 'Newsreader', 'Georgia', serif;
+  }
+
+  .font-serif-luxury {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+  }
+}
+
+/* Editorial Aesthetic Core Utility Styles */
+.serif {
+  font-family: 'Playfair Display', 'Newsreader', 'Georgia', serif;
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom right, #ffffff 15%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light .gradient-text {
+  background: linear-gradient(to bottom right, #000000 15%, #555555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-gold {
+  background: linear-gradient(to bottom right, #ffffff 10%, #fbbf24 60%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light .gradient-gold {
+  background: linear-gradient(to bottom right, #111111 10%, #d97706 60%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism & Theme-Aware Containers */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.glass-panel-glow {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.15);
+}
+
+.glass-pill {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-input {
+  background: var(--input-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+}
+
+.glass-input:focus {
+  border-color: rgba(120, 120, 120, 0.5);
+  box-shadow: 0 0 0 3px rgba(120, 120, 120, 0.12);
+}
+
+/* 3D Perspective Utilities */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.perspective-deep {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.tilted-card {
+  transform: rotateY(-25deg) rotateX(10deg) rotateZ(2deg);
+  box-shadow: -20px 20px 50px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.tilted-card:hover {
+  transform: rotateY(-15deg) rotateX(6deg) rotateZ(1deg);
+  box-shadow: -15px 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtle Shimmer & Light Effects */
+@keyframes ethereal-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-ethereal {
+  animation: ethereal-float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Touch responsiveness utilities */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Hide scrollbar for clean horizontal swipe lists */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "EternIA",
+  "description": "EternIA — Canciones Personalizadas. Tu historia, hecha canción. Creación de canciones y películas cinematográficas inolvidables con Inteligencia Artificial, efectos 3D y masterización de estudio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
