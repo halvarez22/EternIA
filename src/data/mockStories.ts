@@ -72,12 +72,12 @@ export const ETERNIA_CATEGORIES: CategoryInfo[] = [
 export const INITIAL_FINISHED_STORIES: FinishedStory[] = [
   {
     id: 'story-1',
-    title: 'El Sí Quiero de Sofía & Mateo',
+    title: '¿Por qué regalar siempre lo mismo?',
     serviceType: 'video_musicalizado',
     category: 'bodas',
     categoryLabel: 'Bodas 💍',
     categoryIcon: '💍',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    videoUrl: '/video_promo_1.mp4',
     thumbnailUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop',
     duration: '02:45',
     protagonists: 'Sofía & Mateo (Toledo, España)',
