@@ -21,18 +21,18 @@ export default function App() {
   // Theme state with localStorage persistence
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     try {
-      const savedTheme = localStorage.getItem('eternia_theme');
+      const savedTheme = localStorage.getItem('eternia_theme_v2');
       if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
     } catch (e) {
-      console.warn('Could not read saved theme', e);
+      console.warn('Could not read theme from localStorage', e);
     }
-    return 'dark';
+    return 'dark'; // default
   });
 
-  // Synchronize document classes on theme change
+  // Apply theme to document
   useEffect(() => {
     try {
-      localStorage.setItem('eternia_theme', theme);
+      localStorage.setItem('eternia_theme_v2', theme);
       if (theme === 'light') {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
@@ -45,42 +45,61 @@ export default function App() {
     }
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
-  // Stored finished stories (supports uploading & local persistence)
+  // Persisted state for stories and featured story
   const [stories, setStories] = useState<FinishedStory[]>(() => {
     try {
-      const saved = localStorage.getItem('eternia_stories');
+      const saved = localStorage.getItem('eternia_stories_v2');
       if (saved) {
         return JSON.parse(saved);
       }
     } catch (e) {
-      console.warn('Could not load stored stories', e);
+      console.warn('Could not read stories from localStorage', e);
     }
     return INITIAL_FINISHED_STORIES;
   });
 
-  // Featured promo story ID (displayed on the main Hero card)
   const [featuredStoryId, setFeaturedStoryId] = useState<string>(() => {
     try {
-      const savedFeatured = localStorage.getItem('eternia_featured_story_id');
+      const savedFeatured = localStorage.getItem('eternia_featured_story_id_v2');
       if (savedFeatured) return savedFeatured;
     } catch (e) {
-      console.warn('Could not load featured story id', e);
+      console.warn('Could not read featured story id from localStorage', e);
     }
-    return 'story-1';
+    return INITIAL_FINISHED_STORIES[0].id;
   });
 
-  // Admin / Authorized user state
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState<boolean>(() => {
     try {
-      return localStorage.getItem('eternia_admin_logged_in') === 'true';
+      return localStorage.getItem('eternia_admin_logged_in_v2') === 'true';
     } catch (e) {
       return false;
     }
   });
+
+  // Persist whenever they change
+  useEffect(() => {
+    try {
+      localStorage.setItem('eternia_stories_v2', JSON.stringify(stories));
+    } catch (e) {
+      console.warn('Could not persist stories', e);
+    }
+  }, [stories]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('eternia_featured_story_id_v2', featuredStoryId);
+    } catch (e) {
+      console.warn('Could not persist featured story id', e);
+    }
+  }, [featuredStoryId]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('eternia_admin_logged_in_v2', isAdminLoggedIn ? 'true' : 'false');
+    } catch (e) {
+      console.warn('Could not persist admin login state', e);
+    }
+  }, [isAdminLoggedIn]);
 
   const [isAdminModalOpen, setIsAdminModalOpen] = useState<boolean>(false);
 
@@ -91,32 +110,9 @@ export default function App() {
   const [activeNavSection, setActiveNavSection] = useState<string>('hero');
   const [creatorInitialCategory, setCreatorInitialCategory] = useState<EterniaCategory>('bodas');
 
-  // Save stories on change
-  useEffect(() => {
-    try {
-      localStorage.setItem('eternia_stories', JSON.stringify(stories));
-    } catch (e) {
-      console.warn('Could not persist stories', e);
-    }
-  }, [stories]);
-
-  // Save featured story ID on change
-  useEffect(() => {
-    try {
-      localStorage.setItem('eternia_featured_story_id', featuredStoryId);
-    } catch (e) {
-      console.warn('Could not persist featured story id', e);
-    }
-  }, [featuredStoryId]);
-
-  // Save admin login state
-  useEffect(() => {
-    try {
-      localStorage.setItem('eternia_admin_logged_in', isAdminLoggedIn ? 'true' : 'false');
-    } catch (e) {
-      console.warn('Could not persist admin login state', e);
-    }
-  }, [isAdminLoggedIn]);
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   const handleLoginAdmin = (password: string): boolean => {
     const valid = !password || password.toLowerCase() === 'eternia' || password === 'admin' || password === '1234';
