@@ -78,7 +78,7 @@ export const INITIAL_FINISHED_STORIES: FinishedStory[] = [
     categoryLabel: 'Bodas 💍',
     categoryIcon: '💍',
     videoUrl: '/video_promo_1.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop',
+    thumbnailUrl: '/video_promo_1_thumbnail.jpg',
     duration: '02:45',
     protagonists: 'Sofía & Mateo (Toledo, España)',
     clientQuote: '“No pudimos contener las lágrimas al escuchar nuestros votos convertidos en la canción de entrada. Todos los invitados quedaron mudos.”',
