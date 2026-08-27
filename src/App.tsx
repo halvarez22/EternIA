@@ -9,6 +9,7 @@ import { StoryCreatorWizard } from './components/StoryCreatorWizard';
 import { PricingSection } from './components/PricingSection';
 import { EmotionalTestimonials } from './components/EmotionalTestimonials';
 import { Footer } from './components/Footer';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { VideoPlayerModal } from './components/VideoPlayerModal';
 import { VideoUploaderModal } from './components/VideoUploaderModal';
 import { AdminVideoStudioModal } from './components/AdminVideoStudioModal';
@@ -195,6 +196,7 @@ export default function App() {
 
   return (
     <div className={`min-h-screen bg-[var(--bg-app)] text-[var(--text-primary)] transition-colors duration-300 ${theme === 'light' ? 'light' : 'dark'}`}>
+      <FloatingWhatsApp />
       {/* Navigation Header */}
       <Navbar
         onOpenUploadModal={() => setIsAdminModalOpen(true)}
