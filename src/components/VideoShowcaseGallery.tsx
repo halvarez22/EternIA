@@ -60,7 +60,6 @@ export const VideoShowcaseGallery: React.FC<VideoShowcaseGalleryProps> = ({
           icon: <Film className="w-3 h-3 text-cyan-300" />,
           classes: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40'
         };
-      case 'video_musicalizado':
       default:
         return {
           label: 'Video Musicalizado',
