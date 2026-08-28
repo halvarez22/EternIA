@@ -231,7 +231,7 @@ export const VideoShowcaseGallery: React.FC<VideoShowcaseGalleryProps> = ({
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-h-[750px] overflow-y-auto custom-scrollbar pr-2">
             {filteredStories.map((story) => {
               const badge = getServiceBadge(story.serviceType);
               const isSong = story.serviceType === 'cancion';
