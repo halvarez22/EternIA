@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { EterniaCategory, StoryDraft, GeneratedStoryResult } from '../types';
-import { Sparkles, Music, Heart, Film, ArrowRight, ArrowLeft, Check, Loader2, Send, MessageCircle, Copy, CheckCheck } from 'lucide-react';
+import { Sparkles, Music, Heart, Film, ArrowRight, ArrowLeft, Check, Loader2, Send, MessageCircle, Copy, CheckCheck, PlayCircle, Square } from 'lucide-react';
 import { ETERNIA_CATEGORIES } from '../data/mockStories';
 import { EternIALogo } from './EternIALogo';
 import confetti from 'canvas-confetti';
 import { generateStoryScript } from '../services/aiService';
+import { MUSIC_STYLES } from '../config/musicCatalog';
+import { useAudioPlayer } from '../hooks/useAudioPlayer';
 
 interface StoryCreatorWizardProps {
   initialCategory?: EterniaCategory;
@@ -22,6 +24,8 @@ export const StoryCreatorWizard: React.FC<StoryCreatorWizardProps> = ({
   const [generatedResult, setGeneratedResult] = useState<GeneratedStoryResult | null>(null);
   const [copiedLyrics, setCopiedLyrics] = useState(false);
 
+  const { play, stop, isPlaying, currentlyPlayingId } = useAudioPlayer();
+
   // Form State
   const [formData, setFormData] = useState<StoryDraft>({
     category: initialCategory,
@@ -29,21 +33,12 @@ export const StoryCreatorWizard: React.FC<StoryCreatorWizardProps> = ({
     senderName: '',
     relationship: 'Pareja / Prometidos',
     keyMoments: '',
-    musicStyle: 'Balada Orquestal con Piano y Cuerdas',
+    musicStyle: MUSIC_STYLES[0].label,
     emotionalTone: 'Profundamente Emotivo & Romántico',
     specialPhrases: '',
     vocalPreference: 'dueto',
     deliverySpeed: 'express_48h'
   });
-
-  const musicStyles = [
-    { id: 'orquestal', label: 'Balada Orquestal (Piano, Violines & Chelo)', desc: 'Ideal para Bodas y Momentos Cumbre' },
-    { id: 'acustico', label: 'Pop Acústico & Guitarra Cálida', desc: 'Fresco, cercano y lleno de luz' },
-    { id: 'bolero', label: 'Bolero Clásico Modernizado', desc: 'Perfecto para 50 Años y Aniversarios' },
-    { id: 'nana', label: 'Nana Celestial & Arpa de Cristal', desc: 'Diseñado para Bautizos y Primeros Latidos' },
-    { id: 'epico', label: 'Banda Sonora Épica Cinematográfica', desc: 'Para Historias de Superación y Biografías' },
-    { id: 'jazz', label: 'Jazz Íntimo / Soul Cálido', desc: 'Elegante, nocturno y sofisticado' }
-  ];
 
   const emotionalTones = [
     'Profundamente Emotivo (Lágrimas de Alegría)',
@@ -333,27 +328,57 @@ export const StoryCreatorWizard: React.FC<StoryCreatorWizardProps> = ({
                 <label className="block uppercase tracking-wider text-[var(--text-secondary)] mb-3 font-mono text-[10px]">
                   Estilo Musical Deseado:
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
-                  {musicStyles.map((style) => (
-                    <button
-                      key={style.id}
-                      type="button"
-                      onClick={() => setFormData({ ...formData, musicStyle: style.label })}
-                      className={`p-3.5 sm:p-4 rounded-2xl border text-left transition-all touch-target ${
-                        formData.musicStyle === style.label
-                          ? 'border-[var(--glass-border)] bg-[var(--glass-hover-bg)] ring-1 ring-[var(--glass-border)] text-[var(--text-primary)]'
-                          : 'border-[var(--glass-border)] glass text-[var(--text-secondary)] hover:bg-[var(--glass-hover-bg)]'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-xs text-[var(--text-primary)]">{style.label}</span>
-                        {formData.musicStyle === style.label && (
-                          <Check className="w-3.5 h-3.5 text-emerald-500" />
-                        )}
-                      </div>
-                      <p className="text-[11px] text-[var(--text-muted)] mt-1 font-light">{style.desc}</p>
-                    </button>
-                  ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 max-h-[360px] overflow-y-auto pr-2 custom-scrollbar">
+                  {MUSIC_STYLES.map((style) => {
+                    const isSelected = formData.musicStyle === style.label;
+                    const isTrackPlaying = isPlaying === style.id;
+                    const isTrackLoading = isLoading === style.id;
+                    
+                    return (
+                      <button
+                        key={style.id}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, musicStyle: style.label })}
+                        className={`relative p-3.5 sm:p-4 rounded-2xl border text-left transition-all touch-target overflow-hidden ${
+                          isSelected
+                            ? 'border-[var(--glass-border)] bg-[var(--glass-hover-bg)] ring-1 ring-[var(--glass-border)] text-[var(--text-primary)]'
+                            : 'border-[var(--glass-border)] glass text-[var(--text-secondary)] hover:bg-[var(--glass-hover-bg)]'
+                        } ${isTrackPlaying ? 'ring-2 ring-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]' : ''}
+                        ${isTrackLoading ? 'animate-pulse' : ''}`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xl">{style.emoji}</span>
+                            <span className="font-semibold text-xs text-[var(--text-primary)]">{style.label}</span>
+                          </div>
+                          
+                          <div className="flex items-center gap-2">
+                            {/* Audio Play Button */}
+                            <div
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                play(style.id, style.url);
+                              }}
+                              className={`p-1.5 rounded-full cursor-pointer hover:bg-black/10 dark:hover:bg-white/10 transition-colors z-10 ${isTrackPlaying ? 'text-emerald-500' : 'text-[var(--text-muted)]'}`}
+                            >
+                              {isTrackLoading ? (
+                                <Loader2 className="w-5 h-5 animate-spin text-emerald-500" />
+                              ) : isTrackPlaying ? (
+                                <Square className="w-5 h-5" fill="currentColor" />
+                              ) : (
+                                <PlayCircle className="w-5 h-5" />
+                              )}
+                            </div>
+                            
+                            {isSelected && (
+                              <Check className="w-3.5 h-3.5 text-emerald-500" />
+                            )}
+                          </div>
+                        </div>
+                        <p className="text-[11px] text-[var(--text-muted)] mt-1 font-light pr-10">{style.desc}</p>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
