@@ -127,7 +127,7 @@ export const CategoryShowcase3D: React.FC<CategoryShowcase3DProps> = ({
                       e.stopPropagation();
                       onSelectCategory(cat.id);
                     }}
-                    className="touch-target glass px-4 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-semibold text-[var(--btn-primary-text)] bg-[var(--btn-primary-bg)] hover:scale-105 transition-all shadow-md"
+                    className="touch-target px-4 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold bg-white text-black hover:bg-neutral-200 hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,255,255,0.25)]"
                   >
                     Ver Ejemplos
                   </button>
