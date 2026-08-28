@@ -433,8 +433,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     ]
   },
   {
-    id: 'video-musicalizado-medida',
-    name: 'Video Musicalizado',
+    id: 'video-medida',
+    name: 'Video a la Medida',
     tagline: 'Video cinematográfico con canción original sincronizada',
     price: 560,
     originalPrice: 700,

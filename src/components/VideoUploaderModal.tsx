@@ -101,7 +101,7 @@ export const VideoUploaderModal: React.FC<VideoUploaderModalProps> = ({
     const newStory: FinishedStory = {
       id: `uploaded-${Date.now()}`,
       title: title.trim(),
-      serviceType: 'video_musicalizado',
+      serviceType: 'video',
       category: category,
       categoryLabel: categoryLabels[category],
       categoryIcon: categoryIcons[category],

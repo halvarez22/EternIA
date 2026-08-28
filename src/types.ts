@@ -1,4 +1,4 @@
-export type ServiceType = 'cancion' | 'video' | 'video_musicalizado';
+export type ServiceType = 'cancion' | 'video';
 
 export type EterniaCategory =
   | 'bodas'
@@ -31,7 +31,7 @@ export interface StoryScene {
 export interface FinishedStory {
   id: string;
   title: string;
-  serviceType: ServiceType; // 'cancion' | 'video' | 'video_musicalizado'
+  serviceType: ServiceType; // 'cancion' | 'video'
   category: EterniaCategory;
   categoryLabel: string;
   categoryIcon: string;

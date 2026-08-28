@@ -3,7 +3,7 @@ import { Music, Film, Sparkles, Disc, Video, CheckCircle2, ArrowRight, Layers, V
 import { EternIALogo } from './EternIALogo';
 
 interface ServicesShowcaseSectionProps {
-  onSelectServiceTab: (serviceType: 'cancion' | 'video' | 'video_musicalizado') => void;
+  onSelectServiceTab: (serviceType: 'cancion' | 'video') => void;
   onNavigateTo: (sectionId: string) => void;
 }
 
@@ -34,7 +34,7 @@ export const ServicesShowcaseSection: React.FC<ServicesShowcaseSectionProps> = (
       priceFrom: 'Desde $200 MXN'
     },
     {
-      id: 'video_musicalizado' as const,
+      id: 'video' as const,
       badge: 'Servicio 02 • Experiencia Total EternIA',
       title: 'Videos Musicalizados',
       subtitle: 'Película cinematográfica + Canción original sincronizadas a la perfección',

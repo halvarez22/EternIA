@@ -93,10 +93,9 @@ export const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
   const serviceBadgeConfig = {
     cancion: { label: '🎵 Canción a la Medida', bg: 'bg-amber-400/20 text-amber-300 border-amber-400/30' },
     video: { label: '🎬 Video a la Medida', bg: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' },
-    video_musicalizado: { label: '✨ Video Musicalizado', bg: 'bg-gradient-to-r from-amber-400/20 to-pink-500/20 text-amber-200 border-amber-400/30' }
-  };
+    };
 
-  const currentBadge = serviceBadgeConfig[story.serviceType || 'video_musicalizado'];
+  const currentBadge = serviceBadgeConfig[story.serviceType || 'cancion'];
 
   return (
     <div

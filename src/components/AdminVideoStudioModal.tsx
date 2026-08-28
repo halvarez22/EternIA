@@ -59,7 +59,7 @@ export const AdminVideoStudioModal: React.FC<AdminVideoStudioModalProps> = ({
   const [loginError, setLoginError] = useState('');
 
   // Form Fields for new upload
-  const [serviceType, setServiceType] = useState<ServiceType>('video_musicalizado');
+  const [serviceType, setServiceType] = useState<ServiceType>('cancion');
   const [uploadMode, setUploadMode] = useState<'file' | 'url'>('url');
   const [mediaFile, setMediaFile] = useState<File | null>(null);
   const [mediaPreviewUrl, setMediaPreviewUrl] = useState<string>('');
@@ -78,7 +78,7 @@ export const AdminVideoStudioModal: React.FC<AdminVideoStudioModalProps> = ({
   const [isProcessing, setIsProcessing] = useState(false);
   const [uploadSuccessMsg, setUploadSuccessMsg] = useState('');
   const [uploadErrorMsg, setUploadErrorMsg] = useState('');
-  const [manageFilter, setManageFilter] = useState<'all' | 'cancion' | 'video' | 'video_musicalizado'>('all');
+  const [manageFilter, setManageFilter] = useState<'all' | 'cancion' | 'video'>('all');
 
   // Edit Story State
   const [editingStoryId, setEditingStoryId] = useState<string | null>(null);
@@ -134,7 +134,7 @@ export const AdminVideoStudioModal: React.FC<AdminVideoStudioModalProps> = ({
     const serviceTags: Record<ServiceType, string> = {
       cancion: 'Canción a la Medida',
       video: 'Video a la Medida',
-      video_musicalizado: 'Video Musicalizado a la Medida'
+      
     };
 
     const newStory: FinishedStory = {
