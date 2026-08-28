@@ -226,7 +226,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     originalPrice: 300,
     currency: 'MXN',
     isPopular: true,
-    deliveryTime: '48 a 72 horas',
+    deliveryTime: '1 hora',
     revisions: '1 ajuste permitido',
     features: [
       'Composición original completa',
