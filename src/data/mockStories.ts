@@ -88,8 +88,7 @@ export const INITIAL_FINISHED_STORIES: FinishedStory[] = [
     tags: ['Portafolio', 'Acústico', 'Muestra'],
     viewsCount: 1500,
     likesCount: 400,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-baile_boda',
@@ -109,8 +108,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Baile', 'Muestra'],
     viewsCount: 1733,
     likesCount: 460,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-balada_pop_hombre',
@@ -130,8 +128,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Balada', 'Muestra'],
     viewsCount: 1966,
     likesCount: 520,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-balada_pop_mujer',
@@ -151,8 +148,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Balada', 'Muestra'],
     viewsCount: 2199,
     likesCount: 580,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-balada_ranchera',
@@ -172,8 +168,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Balada', 'Muestra'],
     viewsCount: 2432,
     likesCount: 640,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-banda',
@@ -193,8 +188,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Banda', 'Muestra'],
     viewsCount: 2665,
     likesCount: 700,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-blues',
@@ -214,8 +208,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Blues', 'Muestra'],
     viewsCount: 2898,
     likesCount: 760,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-cumbia',
@@ -235,8 +228,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Cumbia', 'Muestra'],
     viewsCount: 3131,
     likesCount: 820,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-cumpleanos',
@@ -256,8 +248,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Cumpleaños', 'Muestra'],
     viewsCount: 3364,
     likesCount: 880,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-funeral',
@@ -277,8 +268,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Funeral', 'Muestra'],
     viewsCount: 3597,
     likesCount: 940,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-heavy_metal',
@@ -298,8 +288,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Heavy', 'Muestra'],
     viewsCount: 3830,
     likesCount: 1000,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-iglesia',
@@ -319,8 +308,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Iglesia', 'Muestra'],
     viewsCount: 4063,
     likesCount: 1060,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-infantil',
@@ -340,8 +328,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Infantil', 'Muestra'],
     viewsCount: 4296,
     likesCount: 1120,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-jazz',
@@ -361,8 +348,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Jazz', 'Muestra'],
     viewsCount: 4529,
     likesCount: 1180,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-regueton',
@@ -382,8 +368,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Reguetón', 'Muestra'],
     viewsCount: 4762,
     likesCount: 1240,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-tango',
@@ -403,8 +388,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Tango', 'Muestra'],
     viewsCount: 4995,
     likesCount: 1300,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   },
   {
     id: 'cancion-opera',
@@ -424,8 +408,7 @@ convertidas en una obra de arte sonoro...'
     tags: ['Portafolio', 'Ópera', 'Muestra'],
     viewsCount: 5228,
     likesCount: 1360,
-    lyricsSnippet: 'Descubre el poder de tus memorias
-convertidas en una obra de arte sonoro...'
+    lyricsSnippet: 'Descubre el poder de tus memorias convertidas en una obra de arte sonoro...'
   }
 ];
 
