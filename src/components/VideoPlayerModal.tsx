@@ -41,7 +41,8 @@ export const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
 
   if (!story) return null;
 
-  const togglePlay = () => {
+  const togglePlay = (e?: React.MouseEvent) => {
+    if (e && e.stopPropagation) e.stopPropagation();
     const mediaEl = isSongOnly ? audioRef.current : videoRef.current;
     if (!mediaEl) return;
 
