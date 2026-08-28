@@ -71,6 +71,25 @@ export const ETERNIA_CATEGORIES: CategoryInfo[] = [
 
 export const INITIAL_FINISHED_STORIES: FinishedStory[] = [
   {
+    id: 'promo-principal',
+    title: '¿Por qué siempre regalar lo mismo?',
+    serviceType: 'video',
+    category: 'bodas',
+    categoryLabel: 'EternIA Promo 🎬',
+    categoryIcon: '🎬',
+    mediaUrl: '/video_promo_1.mp4',
+    thumbnailUrl: '/video_promo_1_thumbnail.jpg',
+    duration: '01:00',
+    protagonists: 'EternIA Studio',
+    clientQuote: '"Eternizamos tus momentos más valiosos con obras cinematográficas inolvidables."',
+    synopsis: 'Descubre por qué una obra musical y cinematográfica a la medida es el regalo perfecto que trasciende el tiempo.',
+    soundtrackStyle: 'Cinematográfico',
+    emotionalTone: 'Inspirador',
+    lyricsSnippet: 'Tu historia merece ser contada...',
+    isUserUploaded: false,
+    createdAt: new Date().toISOString(),
+  },
+  {
     id: 'cancion-acustico',
     title: '🎵 Acústico: Alma y Cuerda',
     serviceType: 'cancion',
