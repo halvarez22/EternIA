@@ -108,7 +108,7 @@ export const VideoShowcaseGallery: React.FC<VideoShowcaseGalleryProps> = ({
             <button
               id="filter-cat-todas"
               onClick={() => onCategoryFilterChange('todas')}
-              className={`touch-target px-4 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-semibold whitespace-nowrap transition-all cursor-pointer ${
+              className={`touch-target shrink-0 px-4 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-semibold whitespace-nowrap transition-all cursor-pointer ${
                 activeCategoryFilter === 'todas'
                   ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] shadow-md font-bold'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--glass-hover-bg)]'
@@ -143,7 +143,7 @@ export const VideoShowcaseGallery: React.FC<VideoShowcaseGalleryProps> = ({
               <button
                 id="filter-cat-subidos"
                 onClick={() => onCategoryFilterChange('subidos')}
-                className={`touch-target px-3.5 sm:px-4 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 cursor-pointer ${
+                className={`touch-target shrink-0 px-3.5 sm:px-4 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 cursor-pointer ${
                   activeCategoryFilter === 'subidos'
                     ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] shadow-md font-bold'
                     : 'text-[var(--text-primary)] glass border border-[var(--glass-border)]'
