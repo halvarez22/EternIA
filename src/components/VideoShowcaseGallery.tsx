@@ -245,10 +245,13 @@ export const VideoShowcaseGallery: React.FC<VideoShowcaseGalleryProps> = ({
                 >
                   {/* Thumbnail Container */}
                   <div className="relative aspect-[16/10] w-full bg-neutral-900 overflow-hidden">
-                    <img
-                      src={story.thumbnailUrl}
+                    <img 
+                      src={story.thumbnailUrl} 
                       alt={story.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800';
+                      }}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
