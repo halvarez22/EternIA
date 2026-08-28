@@ -88,6 +88,9 @@ export const INITIAL_FINISHED_STORIES: FinishedStory[] = [
     lyricsSnippet: 'Tu historia merece ser contada...',
     isUserUploaded: false,
     createdAt: new Date().toISOString(),
+    tags: ['EternIA', 'Cinemático', 'Premium'],
+    viewsCount: 1540,
+    likesCount: 980,
   },
   {
     id: 'video-boda-01',
@@ -107,6 +110,9 @@ export const INITIAL_FINISHED_STORIES: FinishedStory[] = [
     lyricsSnippet: 'En cada paso que dimos juntos...',
     isUserUploaded: false,
     createdAt: new Date().toISOString(),
+    tags: ['EternIA', 'Cinemático', 'Premium'],
+    viewsCount: 1540,
+    likesCount: 980,
   },
 
   {

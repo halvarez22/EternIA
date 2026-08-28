@@ -347,7 +347,7 @@ export const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
                   </div>
 
                   <div className="flex flex-wrap gap-2 pt-2">
-                    {story.tags.map((tag, idx) => (
+                    {(story.tags || []).map((tag, idx) => (
                       <span
                         key={idx}
                         className="px-3 py-1 rounded-full text-[10px] font-mono text-white/60 glass border border-white/10 uppercase"
