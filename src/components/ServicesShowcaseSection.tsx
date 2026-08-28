@@ -47,8 +47,8 @@ export const ServicesShowcaseSection: React.FC<ServicesShowcaseSectionProps> = (
         'La máxima expresión de nuestro arte. Creamos la canción original y el video cinematográfico, sincronizando cada nota con cada imagen tuya.',
       highlights: [
         'Canción original compuesta para marcar el compás del video',
-        'Película cinematográfica 4K sincronizada cuadro por cuadro',
-        'Edición visual profesional con etalonaje y voces reales',
+        'Película cinematográfica con edición visual profesional',
+        'Integración de etalonaje y voces reales',
         'No se permiten ajustes (entrega final impecable)',
         'Se entrega 1 versión maestra final'
       ],

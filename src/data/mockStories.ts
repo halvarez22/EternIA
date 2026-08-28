@@ -249,9 +249,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     revisions: 'Sin ajustes',
     features: [
       'Canción a la Medida + Video Cinematográfico',
-      'Película sincronizada cuadro por cuadro con la música',
       'No se permiten ajustes (entrega final impecable)',
-      'Se entrega 1 versión maestra en resolución 4K',
+      'Se entrega 1 versión maestra final',
       'Integración de audios de voz reales',
       'Edición visual profesional con etalonaje (color grading)'
     ]
