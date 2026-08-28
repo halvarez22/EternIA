@@ -187,7 +187,7 @@ export default function App() {
   const currentFeaturedStory = stories.find((s) => s.id === featuredStoryId) || stories[0] || INITIAL_FINISHED_STORIES[0];
 
   // Draft flags for interactive features (Draft 2 modules kept in codebase)
-  const SHOW_DRAFT2_FEATURES = true;
+  const SHOW_DRAFT2_FEATURES = false;
 
   return (
     <div className={`min-h-screen bg-[var(--bg-app)] text-[var(--text-primary)] transition-colors duration-300 ${theme === 'light' ? 'light' : 'dark'}`}>
