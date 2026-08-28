@@ -49,7 +49,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   // Navigation items for promotional draft 1 (perspectivas 3d and creador are preserved for draft 2)
   const SHOW_DRAFT2_NAV = false;
 
-  const navItems = [
+    const navItems = [
+    { id: 'hero', label: 'Inicio' },
     { id: 'servicios', label: 'Servicios' },
     { id: 'categorias', label: 'Líneas EternIA' },
     { id: 'videos', label: 'Galería de Obras' },
@@ -58,6 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       { id: 'creador', label: 'Estudio de Creación' },
     ] : []),
     { id: 'precios', label: 'Planes' },
+    { id: 'testimonios', label: 'Testimonios' },
   ];
 
   return (
