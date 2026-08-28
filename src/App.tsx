@@ -20,7 +20,7 @@ export default function App() {
   // Theme state with localStorage persistence
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     try {
-      const savedTheme = localStorage.getItem('eternia_theme_v8');
+      const savedTheme = localStorage.getItem('eternia_theme_v9');
       if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
     } catch (e) {
       console.warn('Could not read theme from localStorage', e);
@@ -31,7 +31,7 @@ export default function App() {
   // Apply theme to document
   useEffect(() => {
     try {
-      localStorage.setItem('eternia_theme_v8', theme);
+      localStorage.setItem('eternia_theme_v9', theme);
       if (theme === 'light') {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
@@ -47,7 +47,7 @@ export default function App() {
   // Persisted state for stories and featured story
   const [stories, setStories] = useState<FinishedStory[]>(() => {
     try {
-      const saved = localStorage.getItem('eternia_stories_v8');
+      const saved = localStorage.getItem('eternia_stories_v9');
       if (saved) {
         return JSON.parse(saved);
       }
@@ -59,7 +59,7 @@ export default function App() {
 
   const [featuredStoryId, setFeaturedStoryId] = useState<string>(() => {
     try {
-      const savedFeatured = localStorage.getItem('eternia_featured_story_id_v8');
+      const savedFeatured = localStorage.getItem('eternia_featured_story_id_v9');
       if (savedFeatured) return savedFeatured;
     } catch (e) {
       console.warn('Could not read featured story id from localStorage', e);
@@ -69,7 +69,7 @@ export default function App() {
 
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState<boolean>(() => {
     try {
-      return localStorage.getItem('eternia_admin_logged_in_v8') === 'true';
+      return localStorage.getItem('eternia_admin_logged_in_v9') === 'true';
     } catch (e) {
       return false;
     }
@@ -78,7 +78,7 @@ export default function App() {
   // Persist whenever they change
   useEffect(() => {
     try {
-      localStorage.setItem('eternia_stories_v8', JSON.stringify(stories));
+      localStorage.setItem('eternia_stories_v9', JSON.stringify(stories));
     } catch (e) {
       console.warn('Could not persist stories', e);
     }
@@ -86,7 +86,7 @@ export default function App() {
 
   useEffect(() => {
     try {
-      localStorage.setItem('eternia_featured_story_id_v8', featuredStoryId);
+      localStorage.setItem('eternia_featured_story_id_v9', featuredStoryId);
     } catch (e) {
       console.warn('Could not persist featured story id', e);
     }
@@ -94,7 +94,7 @@ export default function App() {
 
   useEffect(() => {
     try {
-      localStorage.setItem('eternia_admin_logged_in_v8', isAdminLoggedIn ? 'true' : 'false');
+      localStorage.setItem('eternia_admin_logged_in_v9', isAdminLoggedIn ? 'true' : 'false');
     } catch (e) {
       console.warn('Could not persist admin login state', e);
     }
