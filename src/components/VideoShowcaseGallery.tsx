@@ -62,9 +62,9 @@ export const VideoShowcaseGallery: React.FC<VideoShowcaseGalleryProps> = ({
         };
       default:
         return {
-          label: 'Video Musicalizado',
-          icon: <Sparkles className="w-3 h-3 text-amber-300" />,
-          classes: 'bg-gradient-to-r from-amber-400/20 to-pink-500/20 text-amber-200 border-amber-400/40'
+          label: 'Canción a la Medida',
+          icon: <Music className="w-3 h-3 text-amber-400" />,
+          classes: 'bg-amber-400/20 text-amber-400 border-amber-400/40'
         };
     }
   };
