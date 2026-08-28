@@ -4,7 +4,6 @@ import { Hero3DSection } from './components/Hero3DSection';
 import { ServicesShowcaseSection } from './components/ServicesShowcaseSection';
 import { CategoryShowcase3D } from './components/CategoryShowcase3D';
 import { VideoShowcaseGallery } from './components/VideoShowcaseGallery';
-import { Interactive3DMockupViewer } from './components/Interactive3DMockupViewer';
 import { StoryCreatorWizard } from './components/StoryCreatorWizard';
 import { PricingSection } from './components/PricingSection';
 import { EmotionalTestimonials } from './components/EmotionalTestimonials';
@@ -238,8 +237,6 @@ export default function App() {
         onCategoryFilterChange={setActiveCategoryFilter}
       />
 
-      {/* [DRAFT 2 FEATURE - HIDDEN FOR PROMOTIONAL DRAFT 1] Interactive 3D Perspective Screen Mockups */}
-      {SHOW_DRAFT2_FEATURES && <Interactive3DMockupViewer />}
 
       {/* [DRAFT 2 FEATURE - HIDDEN FOR PROMOTIONAL DRAFT 1] Interactive AI Story & Song Creator Studio */}
       {SHOW_DRAFT2_FEATURES && (
